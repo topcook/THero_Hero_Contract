@@ -14,17 +14,17 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const PurpleEye = await hre.ethers.getContractFactory("PurpleEye");
-  const PurpleEyedemo = await PurpleEye.deploy(
-      "PurpleEyev4_demo",
-      "PEv4_demo",
-      "ipfs://QmUj9X5dGFtjJadREmrHJYr9XLRaoPzNca1KYqUiRrvzro/",
-      "ipfs://QmdWUSuyADXVzFvecZ4nJQHhcEMkmfDoFgNBpmNpdzB5Ph/hidden.json"
+  const Hero_NFT = await hre.ethers.getContractFactory("THero_Hero_NFT");
+  const HeroNFT = await Hero_NFT.deploy(
+      "THero_Hero_v1",
+      "THR_Hero_v1",
+      "ipfs://QmQia3LHb5VLsz58gvJvMwYFFN1DhZ6ssGzwPJUZrj6pZh/",
+      "ipfs://QmZQFPbCYTyCLq6n7Nk78kdhSpne6U6jV7nxXphRinTYFe/hidden_hero.json"
   );
 
-  await PurpleEyedemo.deployed();
+  await HeroNFT.deployed();
 
-  console.log("PurpleEye demo deployed to:", PurpleEyedemo.address);
+  console.log("Hero NFT deployed to:", HeroNFT.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
